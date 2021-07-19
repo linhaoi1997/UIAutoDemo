@@ -1,3 +1,4 @@
+"""使用run命令每次可以直接生成报告"""
 import os
 import pytest
 from load_config import config

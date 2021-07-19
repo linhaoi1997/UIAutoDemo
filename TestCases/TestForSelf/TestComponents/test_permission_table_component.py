@@ -1,3 +1,4 @@
+"""测试权限表格的组件"""
 import allure
 
 from Components import PermissionTableComponent, Permission

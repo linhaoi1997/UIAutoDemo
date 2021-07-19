@@ -23,6 +23,7 @@ class Permission:
 
     @property
     def selected_status(self):
+        """返回节点被选中的状态：选中，半选，未选中"""
         input_ = self.element.find_element_by_tag_name("input")
         if input_.get_attribute("data-indeterminate") == "true":
             return self.HALF_SELECTED
@@ -32,6 +33,7 @@ class Permission:
             return self.NOT_SELECTED
 
     def _click_input(self):
+        """点击元素，并校验点击成功，点击之后状态必变"""
         input_ = self.element.find_element_by_tag_name("input")
 
         def assert_status(status):
@@ -107,6 +109,7 @@ class PermissionTable(BaseComponent):
             raise_assert_error(self.element.parent, "没找到%s节点" % name)
 
     def search_in_order(self, *args):
+        """有时多个层级可能有相同的名称，那么依次传入层级进行定位"""
         index = 0
         for node in self.nodes:
             if node.name == args[index]:
@@ -118,6 +121,7 @@ class PermissionTable(BaseComponent):
             raise_assert_error(self.element.parent, f"按顺序没找到 {args}节点")
 
     def select_app(self, name):
+        """选择侧边栏，点击某个侧边栏，会展示该app的权限table"""
         for i in self.apps:
             if i.text == name:
                 return scroll_view_and_click(i)

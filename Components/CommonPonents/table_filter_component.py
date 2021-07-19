@@ -1,5 +1,3 @@
-import logging
-
 from Elements.base_actions import Click
 from .form_component import Form
 from ..base_component import BaseComponent

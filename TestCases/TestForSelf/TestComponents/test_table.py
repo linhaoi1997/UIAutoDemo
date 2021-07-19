@@ -1,3 +1,4 @@
+"""测试表格组件"""
 from Components import TableComponent
 from Utils.RunTest.run_test import run_certain
 from Pages.basepage import BasePage

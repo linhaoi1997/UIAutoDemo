@@ -1,3 +1,4 @@
+"""测试table filter组件"""
 import allure
 
 from Components import TableFilterComponent

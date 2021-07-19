@@ -2,7 +2,7 @@ from .base_input import BaseInput
 
 
 class TextInput(BaseInput):
-
+    """文本输入框"""
     @property
     def value(self):
         """:return input已经输入的值"""
@@ -16,12 +16,14 @@ class TextInput(BaseInput):
 
 
 class NoLabelTextInput(TextInput):
+    """有些输入框没有标题label"""
     @property
     def name(self):
         return None
 
 
 class NumberInput(BaseInput):
+    """数字输入框"""
 
     @property
     def value(self):
@@ -36,7 +38,7 @@ class NumberInput(BaseInput):
 
 
 class TextAreaInput(BaseInput):
-
+    """textarea标签的输入框"""
     @property
     def value(self):
         """:return input已经输入的值"""
@@ -50,6 +52,7 @@ class TextAreaInput(BaseInput):
 
 
 class DisableTextInput(BaseInput):
+    """不可输入的输入框，文本字段就是这样实现的"""
     @property
     def value(self):
         """:return input已经输入的值"""

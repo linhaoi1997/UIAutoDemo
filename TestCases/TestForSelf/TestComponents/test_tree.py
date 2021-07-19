@@ -1,8 +1,7 @@
-import logging
-
+"""测试树组件"""
 from selenium.webdriver import ActionChains
 
-from Components.components import TreeComponent
+from Components import TreeComponent
 from Elements.base_actions import scroll_view
 from Pages.basepage import BasePage
 

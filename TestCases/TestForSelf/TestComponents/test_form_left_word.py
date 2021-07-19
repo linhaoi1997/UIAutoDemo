@@ -1,3 +1,5 @@
+"""测试新的左字右框表单组件"""
+
 import datetime
 
 from Utils.RunTest.get_driver import get_driver

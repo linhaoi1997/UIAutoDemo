@@ -5,6 +5,7 @@ from abc import ABCMeta, abstractmethod
 
 
 class BaseInput(metaclass=ABCMeta):
+    """所有input的基类"""
     FOCUS_LOCATOR = ".."
     LABEL_LOCATOR = ".//label/p"
 

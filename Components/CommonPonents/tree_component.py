@@ -1,3 +1,4 @@
+"""树的定位，前端是元素平铺下来的，树的层级关系可以按照_css属性的缩紧情况查看，按照这个属性判断父子关系"""
 import logging
 
 from selenium.webdriver.support.wait import WebDriverWait

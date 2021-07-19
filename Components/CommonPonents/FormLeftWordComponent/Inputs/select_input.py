@@ -9,10 +9,12 @@ from Utils.SeleniumTools.wait_options_visibility import wait_options_visibility
 
 
 class NativeSelectInput(BaseInput):
+    """单选下拉"""
     select_button = "./div"
     options = OptionsElement()
 
     def _choice(self, value):
+        """选择某个元素后，元素会消失"""
         options = self.options
         for option in options:
             if value in option.text:
@@ -43,6 +45,7 @@ class SearchSelectInput(NativeSelectInput):
     select_button = ".//button[@title='Open']"
 
     def search_and_choice(self, search_str: str, value):
+        """搜索框输入之后可能有延迟"""
         with wait_options_visibility(self.driver):
             self.element.find_element_by_xpath(".//input").send_keys(search_str)
         self._choice(value)

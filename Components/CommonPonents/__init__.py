@@ -1,3 +1,4 @@
+"""所有的通用组件"""
 from selenium.webdriver.remote.webdriver import WebDriver
 
 from .table_component import Table
@@ -59,6 +60,7 @@ class TableFilterComponent(Component):
 
 
 class BaseFormLeftWordComponent(Component):
+    """左字右框表单，继承使用"""
     FORM_LOCATOR = "//div[@variant='outlined']"
 
     def __init__(self, *locator):
