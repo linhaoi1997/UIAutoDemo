@@ -47,9 +47,9 @@ UI自动化测试
 
     class Table(object):
 
-    		search_ele = Element("xpath", "./ancestor::*//input[@type='search']")
-    		search_check_box = Element("xpath", "./ancestor::*//div[count(button)>1]/button")
-    		page_info = Element("xpath","//div[@class ='MuiTablePagination-root']//p[2]") # 展示第几页的信息
+    	search_ele = Element("xpath", "./ancestor::*//input[@type='search']")
+    	search_check_box = Element("xpath", "./ancestor::*//div[count(button)>1]/button")
+    	page_info = Element("xpath","//div[@class ='MuiTablePagination-root']//p[2]") # 展示第几页的信息
     	
         def __init__(self, element, locator):
     				self.loactor = locator
@@ -76,11 +76,11 @@ UI自动化测试
             self.start, self.end, self.total_number = self.page_finder.search(self.pages_info.text).groups()
             self.page_operators = self.pages_info.find_elements_by_xpath("./following-sibling::div/button")
     		
-    		# 获取第几行
+    	# 获取第几行
         def __getitem__(self, item):
             return self.body[item]
     		
-    		# 筛选表格的值
+    	# 筛选表格的值
         @try_refresh
         def filter(self, items: dict, search=''):
             if search:
@@ -113,10 +113,10 @@ class CompanyJobPage(CompanyBasePage):
     # 岗位信息
     table = TableElement()
 		
-		def enter_detail(self, filter_):
-        t = self.table
-        self.click(t.search(filter_, search=filter_["岗位名称"]).get_element("操作"))
-        return JobDetailPage(self.driver)
+def enter_detail(self, filter_):
+    t = self.table
+    self.click(t.search(filter_, search=filter_["岗位名称"]).get_element("操作"))
+    return JobDetailPage(self.driver)
 ```
 
 目录结构
